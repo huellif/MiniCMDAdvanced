@@ -2,6 +2,9 @@ TEMPLATE = app
 CONFIG += console
 CONFIG -= qt
 
+default_deployment.pkg_prerules -= pkg_depends_webkit
+default_deployment.pkg_prerules -= pkg_depends_
+
 SOURCES += ServerSession.cpp \
     MiniLog.cpp \
     MiniCMD.cpp \
@@ -37,7 +40,7 @@ INCLUDEPATH += C:/QtSDK/Symbian/SDKs/SymbianSR1Qt474/epoc32/include/mw/
 INCLUDEPATH += C:/QtSDK/Symbian/SDKs/SymbianSR1Qt474/epoc32/include/bafl/
 
 QMAKE_CXXFLAGS += -std=c++0x
-CONFIG += c++11
+CONFIG += c++11 #no_icon 
 
 MMP_RULES += "OPTION gcce -O3"
 MMP_RULES += "OPTION gcce -march=armv6"
